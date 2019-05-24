@@ -16,20 +16,20 @@
   <body>
     <header class="header">
       <div class="header__sort">
-        <label for="select-input">Sort by:</label>
-        <select name="sort" id="select-input">
+        <label for="sort-input">Sort by:</label>
+        <select name="sort" id="sort-input">
           <option value="0" selected disabled hidden>Choose here</option>
           <option value="created">Date</option>
           <option value="num_comments">Number of comments</option>
           <option value="score">Score</option>
           <option value="upvotes">Upvotes</option>
         </select>
-        <button><i class="fas fa-sort"></i></button>
-        <!-- Descending order -->
+        <button class="header__sort__btn" id="order-btn"><i class="fas fa-sort"></i></button>
+        <!-- Ascending/descending order -->
       </div>
       <div class="header__filter">
-        <label for="checkbox-input">Show only posts previous day (24h)</label>
-        <input type="checkbox" id="checkbox-input" />
+        <label for="filter-input">Show only posts previous day (24h)</label>
+        <input type="checkbox" id="filter-input" />
       </div>
     </header>
     <main class="posts-container">
