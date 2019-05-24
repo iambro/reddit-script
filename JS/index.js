@@ -20,12 +20,12 @@ fetch("https://www.reddit.com/r/funny.json")
   });
 
 function convertDate(el) {
-  const date = new Date();
-  const year = date.getFullYear(el);
-  const month = ("0" + (date.getMonth(el) + 1)).slice(-2);
-  const day = ("0" + date.getDay(el)).slice(-2);
-  const hh = ("0" + date.getHours(el)).slice(-2);
-  const mm = ("0" + date.getMinutes(el)).slice(-2);
+  const date = new Date(el*1000);
+  const year = date.getFullYear();
+  const month = ("0" + (date.getMonth() + 1)).slice(-2);
+  const day = ("0" + date.getDate()).slice(-2);
+  const hh = ("0" + date.getHours()).slice(-2);
+  const mm = ("0" + date.getMinutes()).slice(-2);
   return `${day}.${month}.${year} ${hh}:${mm}`;
 }
 
