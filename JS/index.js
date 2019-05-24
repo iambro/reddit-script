@@ -21,11 +21,12 @@ fetch("https://www.reddit.com/r/funny.json")
       postsList.posts.push(element);
     });
     postsList.count = content.data.dist;
-    showList(postsList);
+    showList(postsList.posts);
   });
 
 function convertDate(el) {
-  const date = new Date(el * 1000);
+  const timeDifference = 8 * 60 * 60 * 1000;
+  const date = new Date(el * 1000 - timeDifferenceS);
   const year = date.getFullYear();
   const month = ("0" + (date.getMonth() + 1)).slice(-2);
   const day = ("0" + date.getDate()).slice(-2);
@@ -53,29 +54,37 @@ function deleteList() {
 }
 
 function showList(list) {
-  list.posts.map(post => {
+  list.map(post => {
     createPost(post);
   });
 }
 
-function sort(e) {
-  postsList.posts.filter(post => console.log(post.score));
-}
+function sort(e) {}
 
 function filter() {
   lastDay = !lastDay;
 
   if (lastDay) {
     deleteList();
-    showList(dupa);
+    const filteredList = postsList.posts.filter(
+      post => compareDate(post.created) < 24 * 60 * 60 * 1000
+    );
+    showList(filteredList);
   } else {
     deleteList();
-    showList(postsList);
+    showList(postsList.posts);
   }
 }
 
 function order() {
   console.log("order");
+}
+
+function compareDate(date) {
+  const s = date.split(/\D/);
+  const properDate = new Date(s[2], s[1] - 1, s[0], s[3], s[4]);
+  const currentDate = new Date();
+  return +currentDate - +properDate;
 }
 
 document.getElementById("filter-input").addEventListener("change", filter);
