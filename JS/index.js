@@ -1,6 +1,4 @@
-const post = "data.children[1].data.title";
-
-let postsObject = {
+let postsList = {
   posts: [],
   count: 0
 };
@@ -26,9 +24,9 @@ fetch("https://www.reddit.com/r/funny.json")
         num_comments: post.data.num_comments,
         created: convertDate(post.data.created)
       };
-      postsObject.posts.push(element);
+      postsList.posts.push(element);
     });
-    postsObject.count = content.data.dist;
+    postsList.count = content.data.dist;
   });
 
 //   {
