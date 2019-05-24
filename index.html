@@ -18,6 +18,7 @@
       <div class="header__sort">
         <label for="select-input">Sort by:</label>
         <select name="sort" id="select-input">
+          <option value="0" selected disabled hidden>Choose here</option>
           <option value="created">Date</option>
           <option value="num_comments">Number of comments</option>
           <option value="score">Score</option>
@@ -32,20 +33,18 @@
       </div>
     </header>
     <main class="posts-container">
-        <table class="posts-list">
-            <thead class="posts-list__head">
-                <tr>
-                    <th>Title</th>
-                    <th>Upvotes</th>
-                    <th>Score</th>
-                    <th>Number of comments</th>
-                    <th>Created</th>
-                </tr>
-            </thead>
-            <tbody class="posts-list__body" id="tableBody">
-
-            </tbody>
-        </table>
+      <table class="posts-list">
+        <thead class="posts-list__head">
+          <tr>
+            <th>Title</th>
+            <th>Upvotes</th>
+            <th>Score</th>
+            <th>Number of comments</th>
+            <th>Created</th>
+          </tr>
+        </thead>
+        <tbody class="posts-list__body" id="tableBody"></tbody>
+      </table>
     </main>
     <aside class="aside-box"></aside>
 
