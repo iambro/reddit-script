@@ -48,6 +48,12 @@ function createPost(post) {
   document.getElementById("tableBody").appendChild(tr);
 }
 
+function showList(list) {
+  list.map(post => {
+    createPost(post);
+  });
+}
+
 function deleteList() {
   const tableBody = document.getElementById("tableBody");
   while (tableBody.firstChild) {
@@ -55,14 +61,7 @@ function deleteList() {
   }
 }
 
-function showList(list) {
-  list.map(post => {
-    createPost(post);
-  });
-}
-
 function filter() {
-  lastDay = !lastDay;
   if (lastDay) {
     deleteList();
     const filteredList = postsList.posts.filter(
@@ -107,6 +106,11 @@ function order() {
   sort(document.getElementById("sort-input"));
 }
 
+function handleFilterBtn() {
+  lastDay = !lastDay;
+  filter();
+}
+
 function compareDate(date) {
   const s = date.split(/\D/);
   const properDate = new Date(s[2], s[1] - 1, s[0], s[3], s[4]);
@@ -114,17 +118,21 @@ function compareDate(date) {
   return +currentDate - +properDate;
 }
 
-function topPost(){
-  const maxArr = postsList.posts.map(post => (post.upvotes/post.num_comments))
+function topPost() {
+  const maxArr = postsList.posts.map(post => post.upvotes / post.num_comments);
   const index = maxArr.indexOf(Math.max(...maxArr));
-  const content = `${postsList.posts[index].title} [${Math.round(maxArr[index]*100)/100}]`
-  const h = document.createElement('H1');
+  const content = `${postsList.posts[index].title} [${Math.round(
+    maxArr[index] * 100
+  ) / 100}]`;
+  const h = document.createElement("H1");
   const text = document.createTextNode(content);
   h.appendChild(text);
   document.getElementById("top-post").appendChild(h);
 }
 
 /* LISTENERS */
-document.getElementById("filter-input").addEventListener("change", filter);
+document
+  .getElementById("filter-input")
+  .addEventListener("change", handleFilterBtn);
 document.getElementById("sort-input").addEventListener("change", sort);
 document.getElementById("order-btn").addEventListener("click", order);
