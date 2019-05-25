@@ -24,6 +24,7 @@ fetch("https://www.reddit.com/r/funny.json")
     });
     postsList.count = content.data.dist;
     showList(postsList.posts);
+    topPost();
   });
 
 function convertDate(el) {
@@ -112,6 +113,16 @@ function compareDate(date) {
   const properDate = new Date(s[2], s[1] - 1, s[0], s[3], s[4]);
   const currentDate = new Date();
   return +currentDate - +properDate;
+}
+
+function topPost(){
+  const maxArr = postsList.posts.map(post => (post.upvotes/post.num_comments))
+  const index = maxArr.indexOf(Math.max(...maxArr));
+  const content = `${postsList.posts[index].title} [${Math.round(maxArr[index]*100)/100}]`
+  const h = document.createElement('H1');
+  const text = document.createTextNode(content);
+  h.appendChild(text);
+  document.getElementById("top-post").appendChild(h);
 }
 
 /* LISTENERS */
