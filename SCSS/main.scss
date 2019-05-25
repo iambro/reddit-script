@@ -14,7 +14,7 @@
   td {
     text-align: center;
     padding: 1rem;
-    width: 100rem;
+    width: 14rem;
     box-sizing: border-box;
   }
 
@@ -26,6 +26,7 @@
   tr td:nth-child(1),
   tr th:nth-child(1) {
     text-align: left;
+    width: 50rem;
   }
 
   tr:nth-child(odd) {
