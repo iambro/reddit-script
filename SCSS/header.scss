@@ -1,0 +1,65 @@
+.header {
+  font-size: 1.8rem;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+  background-color: $blue;
+  color: $white;
+
+  &__sort {
+    margin-right: 2rem;
+    line-height: 2.4rem;
+    
+
+    label,
+    select {
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    select {
+      font-size: 1.6rem;
+      font-family: inherit;
+      font-weight: 300;
+    }
+
+    &__btn {
+      background-color: $orange;
+      color: $white;
+      border: none;
+      height: 2.2rem;
+      width: 2.2rem;
+      cursor: pointer;
+      vertical-align: middle;
+      &:hover {
+      }
+    }
+  }
+
+  &__filter {
+    margin-left: 2rem;
+    line-height: 2.4rem;
+
+    label {
+      cursor: pointer;
+      vertical-align: middle;
+
+    }
+    input {
+      vertical-align: middle;
+      appearance: none;
+      outline: 2px solid $orange;
+      background-color: $white;
+      height: 1.6rem;
+      width: 1.6rem;
+      cursor: pointer;
+      &:checked {
+        background-image: url("../IMG/check-solid.svg");
+        background-size: 1.5rem;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}

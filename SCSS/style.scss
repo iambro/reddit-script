@@ -1,3 +1,11 @@
 @import "reset";
 @import "queries";
 @import "variables";
+@import "header";
+@import "main";
+@import "article";
+
+body {
+  font-size: 1.4rem;
+  box-sizing: border-box;
+}

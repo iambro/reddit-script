@@ -8,6 +8,10 @@
       integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Reddit script - recruitment task</title>
@@ -24,14 +28,24 @@
           <option value="score">Score</option>
           <option value="upvotes">Upvotes</option>
         </select>
-        <button class="header__sort__btn" id="order-btn"><i class="fas fa-sort"></i></button>
+        <button class="header__sort__btn" id="order-btn">
+          <i class="fas fa-sort"></i>
+        </button>
         <!-- Ascending/descending order -->
       </div>
       <div class="header__filter">
-        <label for="filter-input">Show only posts previous day (24h)</label>
+        <label for="filter-input"
+          >Show posts only from previous day (24h)</label
+        >
         <input type="checkbox" id="filter-input" />
       </div>
     </header>
+    <article class="article-box" id="top-post">
+      <p>
+        Title of the post with the highest ratio of upvotes to number of
+        comments:
+      </p>
+    </article>
     <main class="posts-container">
       <table class="posts-list">
         <thead class="posts-list__head">
@@ -46,9 +60,7 @@
         <tbody class="posts-list__body" id="tableBody"></tbody>
       </table>
     </main>
-    <aside class="aside-box" id="top-post">
-      <p>Title of the post with the highest ratio of upvotes to number of comments:</p>
-    </aside>
+    
 
     <script src="JS/index.js"></script>
   </body>

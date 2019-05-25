@@ -8,7 +8,6 @@ let sortBy = "";
 let ascendingOrder = true;
 
 /* FUNCTIONS */
-
 fetch("https://www.reddit.com/r/funny.json")
   .then(response => response.json())
   .then(content => {
@@ -126,7 +125,6 @@ function topPost(){
 }
 
 /* LISTENERS */
-
 document.getElementById("filter-input").addEventListener("change", filter);
 document.getElementById("sort-input").addEventListener("change", sort);
 document.getElementById("order-btn").addEventListener("click", order);
