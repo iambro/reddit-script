@@ -1,11 +1,13 @@
+/* VARIABLES */
 const postsList = {
   posts: [],
   count: 0
 };
-
 let lastDay = false;
 let sortBy = "";
 let ascendingOrder = true;
+
+/* FUNCTIONS */
 
 fetch("https://www.reddit.com/r/funny.json")
   .then(response => response.json())
@@ -59,8 +61,6 @@ function showList(list) {
   });
 }
 
-function sort(e) {}
-
 function filter() {
   lastDay = !lastDay;
   if (lastDay) {
@@ -75,8 +75,36 @@ function filter() {
   }
 }
 
+function sort(e) {
+  e.target === undefined ? (sortBy = e.value) : (sortBy = e.target.value);
+  if (sortBy === "created") {
+    postsList.posts.sort((a, b) =>
+      ascendingOrder
+        ? compareDate(b[sortBy]) > compareDate(a[sortBy])
+          ? 1
+          : -1
+        : compareDate(b[sortBy]) < compareDate(a[sortBy])
+        ? 1
+        : -1
+    );
+  } else {
+    postsList.posts.sort((a, b) =>
+      ascendingOrder
+        ? a[sortBy] > b[sortBy]
+          ? 1
+          : -1
+        : a[sortBy] < b[sortBy]
+        ? 1
+        : -1
+    );
+  }
+  deleteList();
+  showList(postsList.posts);
+}
+
 function order() {
-  console.log("order");
+  ascendingOrder = !ascendingOrder;
+  sort(document.getElementById("sort-input"));
 }
 
 function compareDate(date) {
@@ -85,6 +113,8 @@ function compareDate(date) {
   const currentDate = new Date();
   return +currentDate - +properDate;
 }
+
+/* LISTENERS */
 
 document.getElementById("filter-input").addEventListener("change", filter);
 document.getElementById("sort-input").addEventListener("change", sort);
