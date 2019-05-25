@@ -26,7 +26,7 @@ fetch("https://www.reddit.com/r/funny.json")
 
 function convertDate(el) {
   const timeDifference = 8 * 60 * 60 * 1000;
-  const date = new Date(el * 1000 - timeDifferenceS);
+  const date = new Date(el * 1000 - timeDifference);
   const year = date.getFullYear();
   const month = ("0" + (date.getMonth() + 1)).slice(-2);
   const day = ("0" + date.getDate()).slice(-2);
@@ -63,7 +63,6 @@ function sort(e) {}
 
 function filter() {
   lastDay = !lastDay;
-
   if (lastDay) {
     deleteList();
     const filteredList = postsList.posts.filter(
