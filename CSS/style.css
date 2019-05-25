@@ -104,7 +104,7 @@ li {
   .posts-list td {
     text-align: center;
     padding: 1rem;
-    width: 100rem;
+    width: 14rem;
     -webkit-box-sizing: border-box;
     box-sizing: border-box; }
   .posts-list th {
@@ -112,9 +112,31 @@ li {
     color: #ffffff; }
   .posts-list tr td:nth-child(1),
   .posts-list tr th:nth-child(1) {
-    text-align: left; }
+    text-align: left;
+    width: 50rem; }
   .posts-list tr:nth-child(odd) {
     background-color: #cee3f8; }
+
+.article-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #cee3f8;
+  padding: 1.5rem 0; }
+  .article-box p {
+    font-size: 1.2rem;
+    margin: 0; }
+  .article-box h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #ff4500; }
 
 body {
   font-size: 1.4rem;
