@@ -62,14 +62,13 @@ function deleteList() {
 }
 
 function filter() {
+  deleteList();
   if (lastDay) {
-    deleteList();
     const filteredList = postsList.posts.filter(
       post => compareDate(post.created) < 24 * 60 * 60 * 1000
     );
     showList(filteredList);
   } else {
-    deleteList();
     showList(postsList.posts);
   }
 }
@@ -98,7 +97,7 @@ function sort(e) {
     );
   }
   deleteList();
-  showList(postsList.posts);
+  lastDay ? filter() : nushowList(postsList.posts);
 }
 
 function order() {
