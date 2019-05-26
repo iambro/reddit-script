@@ -97,7 +97,7 @@ function sort(e) {
     );
   }
   deleteList();
-  lastDay ? filter() : nushowList(postsList.posts);
+  lastDay ? filter() : showList(postsList.posts);
 }
 
 function order() {
