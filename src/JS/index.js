@@ -118,9 +118,12 @@ function compareDate(date) {
 }
 
 function topPost() {
-  const maxArr = postsList.posts.map(post => post.upvotes / post.num_comments);
+  const newestList = [...postsList.posts].sort((a, b) =>
+    compareDate(a.created) > compareDate(b.created) ? 1 : -1
+  );
+  const maxArr = newestList.map(post => post.upvotes / post.num_comments);
   const index = maxArr.indexOf(Math.max(...maxArr));
-  const content = `${postsList.posts[index].title} [${Math.round(
+  const content = `${newestList[index].title} [${Math.round(
     maxArr[index] * 100
   ) / 100}]`;
   const h = document.createElement("H1");
