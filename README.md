@@ -17,7 +17,7 @@ Functionality:
 * Header contains 3 inputs:
     * Sort - allows to sort list by one of parameter: number of comments, upvotes, score or date.
     * Order - allows to change order between ascending and descending. The default is ascending.
-    * Fileter - allows to filter the list of posts to show results from last 24h only.
+    * Filter - allows to filter the list of posts to show results from last 24h only.
 * The above functions can work simultaneously.
 
 
