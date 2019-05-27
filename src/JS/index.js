@@ -135,3 +135,9 @@ document
   .addEventListener("change", handleFilterBtn);
 document.getElementById("sort-input").addEventListener("change", sort);
 document.getElementById("order-btn").addEventListener("click", order);
+
+
+
+/* EXPORTS */
+
+module.exports = compareDate;

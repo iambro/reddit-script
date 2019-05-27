@@ -1,0 +1,19 @@
+{
+  "name": "reddit-script",
+  "version": "1.0.0",
+  "description": "Recruitment task",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iambro/reddit-script.git"
+  },
+  "author": "Michał Ambrożewicz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iambro/reddit-script/issues"
+  },
+  "homepage": "https://github.com/iambro/reddit-script#readme"
+}
