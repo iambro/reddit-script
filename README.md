@@ -7,7 +7,7 @@ Recruitment task
 * [Live page](#live-page)
 
 ## General info
-This project is a recruitment task. An application is using Reddit API and allows to filetr and sort posts list from https://www.reddit.com/r/funny.json/
+This project is a recruitment task. An application is using Reddit API and allows to filter and sort posts list from https://www.reddit.com/r/funny.json/
 
 Functionality: 
 * The data are fetched on page load.
