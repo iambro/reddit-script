@@ -15,9 +15,9 @@ Functionality:
 * All data are stored in object "postsList". "posts" array contains all posts. "count" property shows number of posts.
 * An article below header shows the title of the post with the highest ratio of upvotes to number of comments. Number in brackets is the ratio. If there are several posts with the same ratio, the latest one is displayed.
 * Header contains 3 inputs:
-** Sort - allows to sort list by one of parameter: number of comments, upvotes, score or date.
-** Order - allows to change order between ascending and descending. The default is ascending.
-** Fileter - allows to filter the list of posts to show results from last 24h only.
+    * Sort - allows to sort list by one of parameter: number of comments, upvotes, score or date.
+    * Order - allows to change order between ascending and descending. The default is ascending.
+    * Fileter - allows to filter the list of posts to show results from last 24h only.
 * The above functions can work simultaneously.
 
 
