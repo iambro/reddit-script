@@ -10,7 +10,6 @@
   &__sort {
     margin-right: 2rem;
     line-height: 2.4rem;
-    
 
     label,
     select {
@@ -32,7 +31,21 @@
       width: 2.2rem;
       cursor: pointer;
       vertical-align: middle;
-      &:hover {
+
+      .tooltip {
+        visibility: hidden;
+        width: 10rem;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        margin: 5px;
+        position: absolute;
+        z-index: 1;
+      }
+      &:hover .tooltip {
+        visibility: visible;
       }
     }
   }
@@ -44,7 +57,6 @@
     label {
       cursor: pointer;
       vertical-align: middle;
-
     }
     input {
       vertical-align: middle;
